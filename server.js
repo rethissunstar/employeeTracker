@@ -17,8 +17,24 @@ const db = mysql.createConnection({
   database: 'employeeTracker_db'
 });
 
-let startLoop = 0;
+// let startLoop = 0;
+// inquirer
+// .prompt([
+//   {
+//     type: 'checkbox',
+//     message: 'Would you like to edit the database?',
+//     name: 'activeChoice',
+//     choices: ['yes, no']
+//   }
+// ])
+// .then((response) =>{
+// if (response == 'yes'){
+//   for (startLoop=0; startLoop < 1;){
 
+//   }
+// }
+//     }
+// )
 // for (startLoop = 0; startLoop < 1;){
 
 db.connect((err) => {
@@ -154,10 +170,7 @@ db.connect((err) => {
                   console.log(response);
                   const { firstName, lastName, role_id, manager } = response;
                   const values = [firstName, lastName, role_id, manager];
-                  db.query(
-                    'INSERT INTO employee_data (firstName, lastName, role_id, manager) VALUES (?, ?, ?, ?)',
-                    values,
-                    (err, results) => {
+                  db.query('INSERT INTO employee_data (firstName, lastName, role_id, manager) VALUES (?, ?, ?, ?)',values,(err, results) => {
                       if (err) {
                         console.log('Error occurred while inserting into Employee_data: ' + err);
                         return;
@@ -203,10 +216,7 @@ db.connect((err) => {
                     console.log(response);
                     const { job_title, dept_id, salary } = response;
                     const values = [job_title, dept_id, salary];
-                    db.query(
-                      'INSERT INTO roles (job_title, dept_id, salary) VALUES (?, ?, ?)',
-                      values,
-                      (err, results) => {
+                    db.query('INSERT INTO roles (job_title, dept_id, salary) VALUES (?, ?, ?)',values,(err, results) => {
                         if (err) {
                           console.log('Error occurred while inserting into roles: ' + err);
                           return;
