@@ -18,6 +18,9 @@
  ## Github link: 
 https://github.com/"github.com/rethissunstar"
 
+## Repository
+https://github.com/rethissunstar/employeeTracker
+
 ## video of use link
 https://youtu.be/wA7AGnynUdo
 
