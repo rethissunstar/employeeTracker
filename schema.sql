@@ -3,7 +3,7 @@ CREATE DATABASE employeeTracker_db;
 USE employeeTracker_db;
 
 CREATE TABLE department (
-  id INT NOT NULL PRIMARY KEY,
+  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   name VARCHAR(255)
 );
 
